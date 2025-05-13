@@ -11,8 +11,8 @@ public class Student extends Cont{
 			String email, String telefon, int anUniversitar) {
 		super(parola, nume, prenume, email, telefon);
 		this.anUniversitar = anUniversitar;
-		this.cursuri = new List<Curs>();
-		this.note = new List<Curs>();
+		this.cursuri = new ArrayList<Curs>();
+		this.note = new ArrayList<Curs>();
 	}
 
 	public int getAnUniversitar() {
@@ -45,6 +45,11 @@ public class Student extends Cont{
 
 	public void setNote(List<Nota> note) {
 		this.note = note;
+	}
+	
+	public void afisare() {
+		super.afisare();
+		System.out.println("An: " + anUniversitar );
 	}
 	
 }

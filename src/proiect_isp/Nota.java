@@ -38,4 +38,10 @@ public class Nota {
 		this.valoare = valoare;
 	}
 	
+	public void afisare() {
+		System.out.println("Curs: " + curs);
+		System.out.println("Data: " + data);
+		System.out.println("Nota: " + valoare);
+	}
+	
 }

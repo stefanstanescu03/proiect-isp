@@ -59,4 +59,10 @@ public class Cont {
 		return parolaIntrodusa == this.parola;
 	}
 	
+	public void afisare() {
+		System.out.println("Nume: " + nume + " " + prenume);
+		System.out.println("Email: " + email);
+		System.out.println("Telefon: " + telefon);
+	}
+	
 }

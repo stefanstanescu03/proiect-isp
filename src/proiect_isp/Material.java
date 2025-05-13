@@ -35,5 +35,12 @@ public class Material {
 		this.profesor = profesor;
 	}
 	
+	public void afisare() {
+		System.out.println("Denumire: " + denumire);
+		System.out.println("Dificultate: " + dificultate);
+		System.out.println("Profesor: " + profesor);
+		System.out.println("Curs: " + curs);
+	}
+	
 	
 }
