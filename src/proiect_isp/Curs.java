@@ -6,6 +6,7 @@ public class Curs {
 	private String denumire;
 	private int an;
 	
+	private List<Profesor> profesori;
 	private List<Material> materiale;
 	private List<Student> studenti;
 
@@ -47,6 +48,15 @@ public class Curs {
 
 	public void setMateriale(List<Material> materiale) {
 		this.materiale = materiale;
+	}
+	
+	public void afisare() {
+		System.out.println("Denumire: " + denumire);
+		System.out.println("An: " + an);
+		for(Profesor profesor : profesori) {
+			System.out.println("Profesor: " + profesor);
+		}
+		
 	}
 	
 	

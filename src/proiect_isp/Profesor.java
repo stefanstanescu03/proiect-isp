@@ -9,8 +9,8 @@ public class Profesor extends Cont{
 
 	public Profesor(String parola, String nume, String prenume, String email, String telefon) {
 		super(parola, nume, prenume, email, telefon);
-		this.cursuriPredate = new List<Curs>;
-		this.materialeIncarcate = new List<Material>;
+		this.cursuriPredate = new ArrayList<Curs>;
+		this.materialeIncarcate = new ArrayList<Material>;
 	}
 
 	public List<Curs> getCurrsuriPredate() {
@@ -45,6 +45,15 @@ public class Profesor extends Cont{
 				System.out.println("Acest profesor nu preda acest curs!");
 			}
 				
+		}
+	}
+	
+	
+	public void afisare() {
+		super.afisare();
+		for(Curs curs : cursuriPredate) {
+			System.out.println("Denumire: " + curs.getDenumire() );
+			System.out.println("An: " + curs.getAn() );
 		}
 	}
 	
