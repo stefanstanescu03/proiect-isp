@@ -53,4 +53,10 @@ public class Student extends Cont{
 		System.out.println("An: " + anUniversitar );
 	}
 	
+	public void afisareNote() {
+		for (Nota nota : note) {
+		System.out.println(nota.getCurs().getDenumire() + "  " + nota.getValoare());
+		}
+	}
+	
 }

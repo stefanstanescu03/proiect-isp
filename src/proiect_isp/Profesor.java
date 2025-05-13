@@ -13,7 +13,7 @@ public class Profesor extends Cont{
 		this.materialeIncarcate = new ArrayList<Material>();
 	}
 
-	public List<Curs> getCurrsuriPredate() {
+	public List<Curs> getCursuriPredate() {
 		return cursuriPredate;
 	}
 	
@@ -21,7 +21,7 @@ public class Profesor extends Cont{
 		cursuriPredate.add(curs);
 	}
 
-	public void setCurrsuriPredate(List<Curs> cursuriPredate) {
+	public void setCursuriPredate(List<Curs> cursuriPredate) {
 		this.cursuriPredate = cursuriPredate;
 	}
 	

@@ -1,5 +1,6 @@
 package proiect_isp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Curs {
@@ -10,12 +11,13 @@ public class Curs {
 	private List<Material> materiale;
 	private List<Student> studenti;
 
-	public Curs(String denumire, int an, List<Material> materiale) {
+	public Curs(String denumire, int an) {
 		super();
 		this.denumire = denumire;
 		this.an = an;
-		this.materiale = materiale;
-		this.materiale = null;
+		this.materiale = new ArrayList<Material>();
+		this.profesori = new ArrayList<Profesor>();
+		this.studenti = new ArrayList<Student>();
 	}
 	
 	public List<Student> getStudenti() {
@@ -54,7 +56,7 @@ public class Curs {
 		System.out.println("Denumire: " + denumire);
 		System.out.println("An: " + an);
 		for(Profesor profesor : profesori) {
-			System.out.println("Profesor: " + profesor);
+			System.out.println("Profesor: " + profesor.getNume() + profesor.getPrenume());
 		}
 		
 	}
