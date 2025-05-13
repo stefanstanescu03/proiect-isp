@@ -1,7 +1,7 @@
 package proiect_isp;
 
+import java.util.ArrayList;
 import java.util.List;
-
 
 public class Profesor extends Cont{
 	private List<Curs> cursuriPredate;
@@ -9,8 +9,8 @@ public class Profesor extends Cont{
 
 	public Profesor(String parola, String nume, String prenume, String email, String telefon) {
 		super(parola, nume, prenume, email, telefon);
-		this.cursuriPredate = new ArrayList<Curs>;
-		this.materialeIncarcate = new ArrayList<Material>;
+		this.cursuriPredate = new ArrayList<Curs>();
+		this.materialeIncarcate = new ArrayList<Material>();
 	}
 
 	public List<Curs> getCurrsuriPredate() {
@@ -47,7 +47,6 @@ public class Profesor extends Cont{
 				
 		}
 	}
-	
 	
 	public void afisare() {
 		super.afisare();

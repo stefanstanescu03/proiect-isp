@@ -1,5 +1,6 @@
 package proiect_isp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Student extends Cont{
@@ -12,7 +13,7 @@ public class Student extends Cont{
 		super(parola, nume, prenume, email, telefon);
 		this.anUniversitar = anUniversitar;
 		this.cursuri = new ArrayList<Curs>();
-		this.note = new ArrayList<Curs>();
+		this.note = new ArrayList<Nota>();
 	}
 
 	public int getAnUniversitar() {
