@@ -5,10 +5,9 @@ import java.util.List;
 public class Profesor extends Cont{
 	private List<Curs> cursuriPredate;
 
-	public Profesor(String parola, String nume, String prenume, String email, String telefon,
-			List<Curs> cursuriPredate) {
+	public Profesor(String parola, String nume, String prenume, String email, String telefon,) {
 		super(parola, nume, prenume, email, telefon);
-		this.cursuriPredate = cursuriPredate;
+		cursuriPredate = new List<Curs>();
 	}
 
 	public List<Curs> getCurrsuriPredate() {

@@ -4,12 +4,14 @@ public class Material {
 	private String denumire;
 	private int dificultate;
 	private Profesor profesor;
+	private Curs curs;
 
-	public Material(String denumire, int dificultate, Profesor profesor) {
+	public Material(String denumire, int dificultate, Profesor profesor,Curs curs) {
 		super();
 		this.denumire = denumire;
 		this.dificultate = dificultate;
 		this.profesor = profesor;
+		this.curs = curs;
 	}
 
 	public String getDenumire() {

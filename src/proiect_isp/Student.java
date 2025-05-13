@@ -8,11 +8,11 @@ public class Student extends Cont{
 	private List<Nota> note;
 	
 	public Student(String parola, String nume, String prenume, 
-			String email, String telefon, int anUniversitar, List<Curs> cursuri, List<Nota> note) {
+			String email, String telefon, int anUniversitar) {
 		super(parola, nume, prenume, email, telefon);
 		this.anUniversitar = anUniversitar;
-		this.cursuri = cursuri;
-		this.note = note;
+		this.cursuri = new List<Curs>();
+		this.note = new List<Curs>();
 	}
 
 	public int getAnUniversitar() {
