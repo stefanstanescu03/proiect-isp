@@ -1,29 +1,18 @@
 package proiect_isp;
 
 public class Cont {
-	private String username;
 	private String parola;
 	private String nume;
 	private String prenume;
 	private String email;
 	private String telefon;
 
-	public Cont(String username, String parola, String nume, String prenume, String email, String telefon) {
-		super();
-		this.username = username;
+	public Cont(String parola, String nume, String prenume, String email, String telefon) {
 		this.parola = parola;
 		this.nume = nume;
 		this.prenume = prenume;
 		this.email = email;
 		this.telefon = telefon;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
 	}
 
 	public String getParola() {

@@ -3,20 +3,24 @@ package proiect_isp;
 import java.util.List;
 
 public class Profesor extends Cont{
-	private List<Curs> currsuriPredate;
+	private List<Curs> cursuriPredate;
 
-	public Profesor(String username, String parola, String nume, String prenume, String email, String telefon,
-			List<Curs> currsuriPredate) {
-		super(username, parola, nume, prenume, email, telefon);
-		this.currsuriPredate = currsuriPredate;
+	public Profesor(String parola, String nume, String prenume, String email, String telefon,
+			List<Curs> cursuriPredate) {
+		super(parola, nume, prenume, email, telefon);
+		this.cursuriPredate = cursuriPredate;
 	}
 
 	public List<Curs> getCurrsuriPredate() {
-		return currsuriPredate;
+		return cursuriPredate;
+	}
+	
+	public void adaugareCursPredat(Curs curs) {
+		cursuriPredate.add(curs);
 	}
 
-	public void setCurrsuriPredate(List<Curs> currsuriPredate) {
-		this.currsuriPredate = currsuriPredate;
+	public void setCurrsuriPredate(List<Curs> cursuriPredate) {
+		this.cursuriPredate = cursuriPredate;
 	}
 	
 }

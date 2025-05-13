@@ -7,12 +7,22 @@ public class Curs {
 	private int an;
 	
 	private List<Material> materiale;
+	private List<Student> studenti;
 
 	public Curs(String denumire, int an, List<Material> materiale) {
 		super();
 		this.denumire = denumire;
 		this.an = an;
 		this.materiale = materiale;
+		this.materiale = null;
+	}
+	
+	public List<Student> getStudenti() {
+		return studenti;
+	}
+
+	public void setStudenti(List<Student> studenti) {
+		this.studenti = studenti;
 	}
 
 	public String getDenumire() {
