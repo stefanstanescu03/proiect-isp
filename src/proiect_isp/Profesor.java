@@ -25,17 +25,16 @@ public class Profesor extends Cont{
 		this.cursuriPredate = cursuriPredate;
 	}
 	
-	public void adaugareMaterial(Material material) {
+	public void inregistrareMaterial(Material material) {
 		this.materialeIncarcate.add(material);
 	}
 	
-	public void inregistrareNota(String curs, String nume, String prenume, int nota) {
+	public void inregistrareNota(Nota nota, Student denotat) {
+		Curs cursdenotat = nota.getCurs();
 		for (Curs curs : cursuriPredate) {
-			if(curs.getDenumire()==curs) {
+			if(curs.getDenumire()==cursdenotat.getDenumire()) {
 				for (Student student : curs.getStudenti())
-					if(student.getNume()==nume && student.getPrenume()==prenume) {
-						Date data = new Date();
-						Nota nota = new Nota(curs, data, nota);
+					if(student.getEmail()==denotat.getEmail()) {
 						student.adaugareNota(nota);
 					}
 					else {
@@ -44,7 +43,6 @@ public class Profesor extends Cont{
 			}
 			else {
 				System.out.println("Acest profesor nu preda acest curs!");
-				
 			}
 				
 		}
