@@ -56,7 +56,7 @@ public class Cont {
 	}
 	
 	public boolean checkPassword(String parolaIntrodusa) {
-		return parolaIntrodusa == this.parola;
+		return this.parola.equals(parolaIntrodusa);
 	}
 	
 	public void afisare() {

@@ -59,6 +59,12 @@ public class Student extends Cont{
 			System.out.println(nota.getCurs().getDenumire() + "  " + nota.getValoare());
 		}
 	}
+	
+	public void afisareCursuri() {
+		for (Curs curs : cursuri) {
+			curs.afisare();
+		}
+	}
 
 	public List<Material> cautaMateriale(Curs curs, LocalDate dataCurenta) {
 		if (cursuri.indexOf(curs) == -1) {

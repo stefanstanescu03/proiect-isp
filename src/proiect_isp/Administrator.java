@@ -40,9 +40,9 @@ public class Administrator extends Cont{
 //		studenti.remove(student);
 //	}
 	
-	public void stergereProfesor(Profesor profesor, List<Profesor> profesori) {
-		profesori.remove(profesor);
-	}
+//	public void stergereProfesor(Profesor profesor, List<Profesor> profesori) {
+//		profesori.remove(profesor);
+//	}
 	
 	public void inregistrareCurs(Curs curs, List<Profesor> profesori, List<Curs> cursuri) {
 		boolean check = true;
