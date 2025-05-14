@@ -72,6 +72,15 @@ public class Curs {
 		
 	}
 	
+	public boolean isInrolat(Student student) {
+		if (this.studenti.indexOf(student) != -1) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 	
 	
 }

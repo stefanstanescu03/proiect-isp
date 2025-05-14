@@ -120,4 +120,13 @@ public class Student extends Cont{
 		return materialeRecomandate;
 	}
 	
+	public boolean isInrolat(Curs curs) {
+		if (this.cursuri.indexOf(curs) != -1) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 }
