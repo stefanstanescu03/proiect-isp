@@ -71,7 +71,7 @@ public class Student extends Cont{
 		}
 		System.out.println("=========================== " );
 	}
-
+	
 	public List<Material> cautaMateriale(Curs curs, LocalDate dataCurenta) {
 		if (cursuri.indexOf(curs) == -1) {
 			return null;
@@ -130,6 +130,15 @@ public class Student extends Cont{
 		}
 		
 		return materialeRecomandate;
+	}
+	
+	public boolean isInrolat(Curs curs) {
+		if (this.cursuri.indexOf(curs) != -1) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 }

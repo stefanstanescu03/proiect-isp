@@ -84,7 +84,16 @@ public class Curs {
 		for (Student student : studenti) {
 			System.out.println(student.getNume() + " " + student.getPrenume());
 		}
-		System.out.println("=========================== " );	
+		System.out.println("=========================== " );
+}
+
+	public boolean isInrolat(Student student) {
+		if (this.studenti.indexOf(student) != -1) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	
