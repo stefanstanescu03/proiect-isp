@@ -47,23 +47,6 @@ public class Profesor extends Cont{
 		}
 		denotat.adaugareNota(nota);
 		return true;
-		
-//		for (Curs curs : cursuriPredate) {
-//			if(curs.getDenumire()==cursdenotat.getDenumire()) {
-//				for (Student student : curs.getStudenti())
-//					if(student.getEmail()==denotat.getEmail()) {
-//						student.adaugareNota(nota);
-//					}
-//					else {
-//						student.afisare();
-//						System.out.println("Acest student nu este inrolat la acest curs!");
-//					}
-//			}
-//			else {
-//				System.out.println("Acest profesor nu preda acest curs!");
-//			}
-//				
-//		}
 	}
 	
 	public void afisare() {
