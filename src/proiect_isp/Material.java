@@ -6,8 +6,7 @@ public class Material {
 	private Profesor profesor;
 	private Curs curs;
 
-	public Material(String denumire, int dificultate, Profesor profesor,Curs curs) {
-		super();
+	public Material(String denumire, int dificultate, Curs curs,Profesor profesor) {
 		this.denumire = denumire;
 		this.dificultate = dificultate;
 		this.profesor = profesor;
@@ -35,11 +34,19 @@ public class Material {
 		this.profesor = profesor;
 	}
 	
+	public Curs getCurs() {
+		return curs;
+	}
+
+	public void setCurs(Curs curs) {
+		this.curs = curs;
+	}
+
 	public void afisare() {
 		System.out.println("Denumire: " + denumire);
 		System.out.println("Dificultate: " + dificultate);
-		System.out.println("Profesor: " + profesor);
-		System.out.println("Curs: " + curs);
+		System.out.println("Profesor: " + profesor.getNume() + " " + profesor.getPrenume());
+		System.out.println("Curs: " + curs.getDenumire());
 	}
 	
 	

@@ -26,34 +26,59 @@ public class Profesor extends Cont{
 	}
 	
 	public void inregistrareMaterial(Material material) {
+		material.getCurs().adaugareMaterial(material);
 		this.materialeIncarcate.add(material);
 	}
 	
-	public void inregistrareNota(Nota nota, Student denotat) {
+	public List<Material> getMaterialeIncarcate() {
+		return materialeIncarcate;
+	}
+
+	public void setMaterialeIncarcate(List<Material> materialeIncarcate) {
+		this.materialeIncarcate = materialeIncarcate;
+	}
+
+	public boolean inregistrareNota(Nota nota, Student denotat) {
 		Curs cursdenotat = nota.getCurs();
-		for (Curs curs : cursuriPredate) {
-			if(curs.getDenumire()==cursdenotat.getDenumire()) {
-				for (Student student : curs.getStudenti())
-					if(student.getEmail()==denotat.getEmail()) {
-						student.adaugareNota(nota);
-					}
-					else {
-						System.out.println("Acest student nu este inrolat la acest curs!");
-					}
-			}
-			else {
-				System.out.println("Acest profesor nu preda acest curs!");
-			}
-				
+
+		if (this.cursuriPredate.indexOf(cursdenotat) == -1 || denotat.getCursuri().indexOf(cursdenotat) == -1) {
+			return false;
 		}
+		denotat.adaugareNota(nota);
+		return true;
+		
+//		for (Curs curs : cursuriPredate) {
+//			if(curs.getDenumire()==cursdenotat.getDenumire()) {
+//				for (Student student : curs.getStudenti())
+//					if(student.getEmail()==denotat.getEmail()) {
+//						student.adaugareNota(nota);
+//					}
+//					else {
+//						student.afisare();
+//						System.out.println("Acest student nu este inrolat la acest curs!");
+//					}
+//			}
+//			else {
+//				System.out.println("Acest profesor nu preda acest curs!");
+//			}
+//				
+//		}
 	}
 	
 	public void afisare() {
+		System.out.println("=========================== " );
+		System.out.println("Profesor" );
 		super.afisare();
-		for(Curs curs : cursuriPredate) {
-			System.out.println("Denumire: " + curs.getDenumire() );
-			System.out.println("An: " + curs.getAn() );
+		if(cursuriPredate.size() != 0 ) {
+			System.out.println();
+			System.out.println("Cursuri" );
+			for(Curs curs : cursuriPredate) {
+				System.out.println("Denumire: " + curs.getDenumire() );
+				System.out.println("An: " + curs.getAn() );
+			}
+			System.out.println("=========================== " );	
 		}
+
 	}
 	
 }

@@ -8,7 +8,6 @@ public class Nota {
 	private int valoare;
 
 	public Nota(Curs curs, Date data, int valoare) {
-		super();
 		this.curs = curs;
 		this.data = data;
 		this.valoare = valoare;
@@ -39,7 +38,7 @@ public class Nota {
 	}
 	
 	public void afisare() {
-		System.out.println("Curs: " + curs);
+		System.out.println("Curs: " + curs.getDenumire());
 		System.out.println("Data: " + data);
 		System.out.println("Nota: " + valoare);
 	}
