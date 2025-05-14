@@ -56,11 +56,11 @@ public class Student extends Cont{
 
 	public void afisareNote() {
 		for (Nota nota : note) {
-		System.out.println(nota.getCurs().getDenumire() + "  " + nota.getValoare());
+			System.out.println(nota.getCurs().getDenumire() + "  " + nota.getValoare());
 		}
 	}
 
-	public List<Material> cautaMateriale(Curs curs) {
+	public List<Material> cautaMateriale(Curs curs, LocalDate dataCurenta) {
 		if (cursuri.indexOf(curs) == -1) {
 			return null;
 		}
@@ -68,12 +68,11 @@ public class Student extends Cont{
 		List<Material> materialeRecomandate = new ArrayList<Material>();
 		
 		if (anUniversitar == curs.getAn()) {
-			 LocalDate today = LocalDate.now();
-			 LocalDate jumatateSem1 = LocalDate.of(today.getYear() - 1, 12, 20);
-			 LocalDate inceputSem2 = LocalDate.of(today.getYear(), 2, 24);
-			 LocalDate jumatateSem2 = LocalDate.of(today.getYear(), 4, 7);
+			 LocalDate jumatateSem1 = LocalDate.of(2024, 12, 20);
+			 LocalDate inceputSem2 = LocalDate.of(2025, 2, 24);
+			 LocalDate jumatateSem2 = LocalDate.of(2025, 4, 7);
 		     
-		     if (today.isBefore(jumatateSem1) || (today.isAfter(inceputSem2) && today.isBefore(jumatateSem2))) {
+		     if (dataCurenta.isBefore(jumatateSem1) || (dataCurenta.isAfter(inceputSem2) && dataCurenta.isBefore(jumatateSem2))) {
 		    	 for (Material material : curs.getMateriale()) {
 					if (material.getDificultate() < 5) {
 						materialeRecomandate.add(material);

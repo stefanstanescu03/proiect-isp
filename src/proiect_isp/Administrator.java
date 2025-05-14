@@ -16,25 +16,29 @@ public class Administrator extends Cont{
 		profesori.add(profesor);
 	}
 	
-	public void stergereStudent(Student student, List<Student> studenti) {
-		studenti.remove(student);
-	}
+//	public void stergereStudent(Student student, List<Student> studenti) {
+//		studenti.remove(student);
+//	}
 	
 	public void stergereProfesor(Profesor profesor, List<Profesor> profesori) {
 		profesori.remove(profesor);
 	}
 	
-	public void inregistrareCurs(Curs curs, List<Curs> cursuri) {
+	public void inregistrareCurs(Curs curs, List<Profesor> profesori, List<Curs> cursuri) {
+		curs.setProfesori(profesori);
+		for (Profesor profesor : profesori) {
+			profesor.adaugareCursPredat(curs);
+		}
 		cursuri.add(curs);
 	}
 	
-	public void stergereCurs(Curs curs, List<Curs> cursuri) {
-		cursuri.remove(curs);
-	}
+//	public void stergereCurs(Curs curs, List<Curs> cursuri) {
+//		cursuri.remove(curs);
+//	}
 	
-	public void modificareCurs(Curs cursModificat, int index, List<Curs> cursuri) {
-		cursuri.set(index, cursModificat);
-	}
+//	public void modificareCurs(Curs cursModificat, int index, List<Curs> cursuri) {
+//		cursuri.set(index, cursModificat);
+//	}
 	
 	public void inrolareStudenti(List<Student> studenti, Curs curs) {
 		curs.setStudenti(studenti);

@@ -12,7 +12,6 @@ public class Curs {
 	private List<Student> studenti;
 
 	public Curs(String denumire, int an) {
-		super();
 		this.denumire = denumire;
 		this.an = an;
 		this.materiale = new ArrayList<Material>();
@@ -48,15 +47,27 @@ public class Curs {
 		return materiale;
 	}
 
+	public void adaugareMaterial(Material material) {
+		materiale.add(material);
+	}
+	
 	public void setMateriale(List<Material> materiale) {
 		this.materiale = materiale;
 	}
 	
+	public List<Profesor> getProfesori() {
+		return profesori;
+	}
+
+	public void setProfesori(List<Profesor> profesori) {
+		this.profesori = profesori;
+	}
+
 	public void afisare() {
 		System.out.println("Denumire: " + denumire);
 		System.out.println("An: " + an);
 		for(Profesor profesor : profesori) {
-			System.out.println("Profesor: " + profesor.getNume() + profesor.getPrenume());
+			System.out.println("Profesor: " + profesor.getNume() + "  " + profesor.getPrenume());
 		}
 		
 	}
