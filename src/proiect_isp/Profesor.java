@@ -26,8 +26,15 @@ public class Profesor extends Cont{
 	}
 	
 	public void inregistrareMaterial(Material material) {
-		material.getCurs().adaugareMaterial(material);
-		this.materialeIncarcate.add(material);
+		if( !( material.getCurs().esteIncarcat(material)) ) {
+			material.getCurs().adaugareMaterial(material);
+			this.materialeIncarcate.add(material);
+			System.out.println("Material a fost incarcat cu succes" );
+		}
+		else {
+			System.out.println("Acest material a fost deja incarcat" );
+		}
+
 	}
 	
 	public List<Material> getMaterialeIncarcate() {
