@@ -35,42 +35,47 @@ public class Administrator extends Cont{
 			profesori.add(profesor);
 		}
 	}
-	
-//	public void stergereStudent(Student student, List<Student> studenti) {
-//		studenti.remove(student);
-//	}
-	
-//	public void stergereProfesor(Profesor profesor, List<Profesor> profesori) {
-//		profesori.remove(profesor);
-//	}
-	
-	public void inregistrareCurs(Curs curs, List<Profesor> profesori, List<Curs> cursuri) {
-		boolean check = true;
-		for(Curs cr : cursuri) {
-			if(cr.getDenumire()==curs.getDenumire()) {
-				System.out.println("Acest curs deja exista");
-				check = false;
-				break;
+
+	public boolean inregistrareCurs(Curs curs, List<Profesor> profesori, List<Curs> cursuri) {
+		for (Curs cursExistent : cursuri) {
+			if (cursExistent.getDenumire().equals(curs.getDenumire())) {
+				return false;
 			}
 		}
-		if(check) {
-			curs.setProfesori(profesori);
-			for (Profesor profesor : profesori) {
-				if(profesor.isTeaching(curs)) {
-					profesor.adaugareCursPredat(curs);
-				}
+		
+		curs.setProfesori(profesori);
+		for (Profesor profesor : profesori) {
+			if (!profesor.isTeaching(curs)) {
+				profesor.adaugareCursPredat(curs);
 			}
-			cursuri.add(curs);
 		}
+		
+		cursuri.add(curs);
+		
+		return true;
 	}
 	
-//	public void stergereCurs(Curs curs, List<Curs> cursuri) {
-//		cursuri.remove(curs);
+//	public void inregistrareCurs(Curs curs, List<Profesor> profesori, List<Curs> cursuri) {
+//		boolean check = true;
+//		for(Curs cr : cursuri) {
+//			if(cr.getDenumire()==curs.getDenumire()) {
+//				System.out.println("Acest curs deja exista");
+//				check = false;
+//				break;
+//			}
+//		}
+//		if(check) {
+//			// Eroare de logica
+//			curs.setProfesori(profesori);
+//			for (Profesor profesor : profesori) {
+//				if(profesor.isTeaching(curs)) {
+//					profesor.adaugareCursPredat(curs);
+//				}
+//			}
+//			cursuri.add(curs);
+//		}
 //	}
-	
-//	public void modificareCurs(Curs cursModificat, int index, List<Curs> cursuri) {
-//		cursuri.set(index, cursModificat);
-//	}
+//	
 	
 	public void inrolareStudenti(List<Student> studenti, Curs curs) {
 		curs.setStudenti(studenti);

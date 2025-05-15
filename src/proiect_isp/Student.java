@@ -50,22 +50,28 @@ public class Student extends Cont{
 	}
 	
 	public void afisare() {
+		System.out.println("=========================== " );
+		System.out.println("Student" );
 		super.afisare();
 		System.out.println("An: " + anUniversitar );
 	}
 
 	public void afisareNote() {
+		System.out.println("Notele lui " + this.getNume() + " " + this.getPrenume() + ":" );
 		for (Nota nota : note) {
 			System.out.println(nota.getCurs().getDenumire() + "  " + nota.getValoare());
 		}
+		System.out.println("=========================== " );
 	}
 	
 	public void afisareCursuri() {
+		System.out.println("Cursurile lui " + this.getNume() + " " + this.getPrenume() + ":" );
 		for (Curs curs : cursuri) {
-			curs.afisare();
+			System.out.println(curs.getDenumire());
 		}
+		System.out.println("=========================== " );
 	}
-
+	
 	public List<Material> cautaMateriale(Curs curs, LocalDate dataCurenta) {
 		if (cursuri.indexOf(curs) == -1) {
 			return null;

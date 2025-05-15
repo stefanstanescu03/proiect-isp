@@ -19,19 +19,43 @@ public class Application {
 		studenti = new ArrayList<Student>(); 
 		cursuri = new ArrayList<Curs>();
 		admin = new Administrator("1234", "Ionescu", "Vladone", "vlad@gmail.com", "0736254378");
+
+	//	admin.inregistrareProfesor(new Profesor("1234", "Popescu", "Ion", "ion@gmail.com", "0736253472"), profesori);
+	//	admin.inregistrareCurs(new Curs("PCLP", 1), profesori, cursuri);
 		
+	//	profesori.get(0).inregistrareMaterial(new Material("Introducere in C++", 2, cursuri.get(0)));
+	//	profesori.get(0).inregistrareMaterial(new Material("Introducere in arhitectura calculatoarelor", 6, cursuri.get(0)));
+		//profesori.get(0).inregistrareMaterial(new Material("Introducere in limbaje de asamblare", 7, cursuri.get(0)));
+	//	profesori.get(0).inregistrareMaterial(new Material("Grafica avansata", 10, cursuri.get(0)));
+		
+	//	admin.inregistrareStudent(new Student("1234", "Oancea", "Vasile", "vasi@gmail.com", "0736254398", 1), studenti);
+	//	admin.inregistrareStudent(new Student("1234", "Dobrin", "Matei", "matei@gmail.com", "0736254398", 2), studenti);
+
 		admin.inregistrareProfesor(new Profesor("1234", "Popescu", "Ion", "ion@gmail.com", "0736253472"), profesori);
 		admin.inregistrareStudent(new Student("1234", "Oancea", "Vasile", "vasi@gmail.com", "0736254398", 1), studenti);
 		admin.inregistrareStudent(new Student("1234", "Dobrin", "Matei", "matei@gmail.com", "0736254398", 2), studenti);
 		admin.inregistrareStudent(new Student("1234", "Mierlan", "Cantemir", "catemir@gmail.com", "0736254398", 2), studenti);
 		admin.inregistrareStudent(new Student("1234", "Chistoc", "Gabriel", "gabriel@gmail.com", "0736254398", 2), studenti);
+
 		
+
+	//	admin.inrolareStudenti(studenti, cursuri.get(0));
 		boolean exitLogare = false;
 		boolean exitCont = true;
 		boolean exit = false;
+
 		
+
+	//	profesori.get(0).inregistrareNota(new Nota(cursuri.get(0), new Date(), 6), studenti.get(1));
+
 		Scanner scanner = new Scanner(System.in);
-		
+
+//		List<Material> materiale = studenti.get(0).cautaMateriale(cursuri.get(0), LocalDate.of(2024, 10, 12));
+//		for (Material material : materiale) {
+//			material.afisare();
+//		}
+//		System.out.println(studenti.get(1).getNote().size());
+
 		Cont contCurent = null;
 		
 		System.out.println("Sistem inteligent de recomandare de materiale! xD");
@@ -173,7 +197,7 @@ public class Application {
 				}
 			}
 		}
-		
+
 		scanner.close();
 	}
 	

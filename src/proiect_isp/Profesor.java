@@ -26,7 +26,6 @@ public class Profesor extends Cont{
 	}
 	
 	public void inregistrareMaterial(Material material) {
-		material.setProfesor(this);
 		material.getCurs().adaugareMaterial(material);
 		this.materialeIncarcate.add(material);
 	}
@@ -41,7 +40,7 @@ public class Profesor extends Cont{
 
 	public boolean inregistrareNota(Nota nota, Student denotat) {
 		Curs cursdenotat = nota.getCurs();
-
+		
 		if (this.cursuriPredate.indexOf(cursdenotat) == -1 || denotat.getCursuri().indexOf(cursdenotat) == -1) {
 			return false;
 		}
@@ -50,11 +49,19 @@ public class Profesor extends Cont{
 	}
 	
 	public void afisare() {
+		System.out.println("=========================== " );
+		System.out.println("Profesor" );
 		super.afisare();
-		for(Curs curs : cursuriPredate) {
-			System.out.println("Denumire: " + curs.getDenumire() );
-			System.out.println("An: " + curs.getAn() );
+		if(cursuriPredate.size() != 0 ) {
+			System.out.println();
+			System.out.println("Cursuri" );
+			for(Curs curs : cursuriPredate) {
+				System.out.println("Denumire: " + curs.getDenumire() );
+				System.out.println("An: " + curs.getAn() );
+			}
+			System.out.println("=========================== " );	
 		}
+
 	}
 	
 	public boolean isTeaching(Curs curs) {

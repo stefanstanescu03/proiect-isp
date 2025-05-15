@@ -6,10 +6,10 @@ public class Material {
 	private Profesor profesor;
 	private Curs curs;
 
-	public Material(String denumire, int dificultate, Curs curs) {
+	public Material(String denumire, int dificultate, Curs curs, Profesor profesor) {
 		this.denumire = denumire;
 		this.dificultate = dificultate;
-		this.profesor = null;
+		this.profesor = profesor;
 		this.curs = curs;
 	}
 

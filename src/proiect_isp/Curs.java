@@ -64,14 +64,29 @@ public class Curs {
 	}
 
 	public void afisare() {
+		System.out.println("=========================== " );
+		System.out.println("Cursuri" );
 		System.out.println("Denumire: " + denumire);
 		System.out.println("An: " + an);
-		for(Profesor profesor : profesori) {
-			System.out.println("Profesor: " + profesor.getNume() + "  " + profesor.getPrenume());
+		if(profesori.size() != 0 ) {
+			System.out.println();
+			System.out.println("Profesori" );
+			for(Profesor profesor : profesori) {
+				System.out.println("Profesor: " + profesor.getNume() + "  " + profesor.getPrenume());
+			}
 		}
+		System.out.println("=========================== " );	
 		
 	}
 	
+	public void afisareStudenti() {
+		System.out.println("Studenti:" );
+		for (Student student : studenti) {
+			System.out.println(student.getNume() + " " + student.getPrenume());
+		}
+		System.out.println("=========================== " );
+}
+
 	public boolean isInrolat(Student student) {
 		if (this.studenti.indexOf(student) != -1) {
 			return true;
