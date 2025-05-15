@@ -49,5 +49,23 @@ public class Material {
 		System.out.println("Curs: " + curs.getDenumire());
 	}
 	
+	public boolean esteIncarcatdeProfesor() {
+		if (this.profesor.esteIncarcat(this)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public boolean esteIncarcatlaCurs() {
+		if (this.curs.esteIncarcat(this)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 	
 }

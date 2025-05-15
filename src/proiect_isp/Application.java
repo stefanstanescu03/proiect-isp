@@ -143,8 +143,9 @@ public class Application {
 					System.out.println("Optiuni: ");
 					System.out.println("1: vizualizare cont");
 					System.out.println("2: vizualizare cursuri");
-					System.out.println("3: iesire cont");
-					System.out.println("4: lasa-te de facultate");
+					System.out.println("3: vizualizare note");
+					System.out.println("4: iesire cont");
+					System.out.println("5: lasa-te de facultate");
 					
 					int optiune = scanner.nextInt();
 					scanner.nextLine(); 
@@ -157,10 +158,13 @@ public class Application {
 						((Student) contCurent).afisareCursuri();
 						break;
 					case 3:
+						((Student) contCurent).afisareNote();
+						break;
+					case 4:
 						exitCont = true;
 						exitLogare = false;
 						break;
-					case 4:
+					case 5:
 						exit = true;
 						exitCont = true;
 						break;
@@ -172,8 +176,10 @@ public class Application {
 				if (contCurent instanceof Profesor) {
 					System.out.println("Optiuni: ");
 					System.out.println("1: vizualizare cont");
-					System.out.println("2: iesire cont");
-					System.out.println("3: iesire aplicatie");
+					System.out.println("2: vizualizare cursuri");
+					System.out.println("3: vizualizare materiale");
+					System.out.println("4: iesire cont");
+					System.out.println("5: iesire aplicatie");
 					
 					int optiune = scanner.nextInt();
 					scanner.nextLine(); 
@@ -183,10 +189,16 @@ public class Application {
 						contCurent.afisare();
 						break;
 					case 2:
+						((Profesor) contCurent).afisareCursuri();
+						break;
+					case 3:
+						((Profesor) contCurent).afisareMateriale();
+						break;
+					case 4:
 						exitCont = true;
 						exitLogare = false;
 						break;
-					case 3:
+					case 5:
 						exit = true;
 						exitCont = true;
 						break;
