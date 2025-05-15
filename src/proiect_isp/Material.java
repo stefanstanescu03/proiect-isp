@@ -47,6 +47,7 @@ public class Material {
 		System.out.println("Dificultate: " + dificultate);
 		System.out.println("Profesor: " + profesor.getNume() + " " + profesor.getPrenume());
 		System.out.println("Curs: " + curs.getDenumire());
+		System.out.println("===========================");
 	}
 	
 	

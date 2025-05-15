@@ -48,6 +48,12 @@ public class Profesor extends Cont{
 		return true;
 	}
 	
+	public void afisareMateriale() {
+		for (Material material : this.materialeIncarcate) {
+			material.afisare();
+		}
+	}
+	
 	public void afisare() {
 		System.out.println("=========================== " );
 		System.out.println("Profesor" );
