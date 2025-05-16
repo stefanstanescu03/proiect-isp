@@ -264,7 +264,6 @@ public class Application {
 			scanner.nextLine();
 			admin.inregistrareStudent(new Student(parola, nume, prenume, email, telefon, an), studenti);
 		}
-		System.out.println("Inregistrarea a avut succes, in total avem " + (studenti.size() + profesori.size()) + " suflete");
 	}
 	
 	public static void creareCurs(Scanner scanner) {
