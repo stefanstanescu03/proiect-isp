@@ -29,10 +29,10 @@ class TestCautareMateriale {
 		admin.inregistrareProfesor(new Profesor("1234", "Popescu", "Ion", "ion@gmail.com", "0736253472"), profesori);
 		admin.inregistrareCurs(new Curs("PCLP", 1), profesori, cursuri);
 		
-	//	profesori.get(0).inregistrareMaterial(new Material("Introducere in C++", 2, cursuri.get(0)));
-	//	profesori.get(0).inregistrareMaterial(new Material("Introducere in arhitectura calculatoarelor", 6, cursuri.get(0)));
-	//	profesori.get(0).inregistrareMaterial(new Material("Introducere in limbaje de asamblare", 7, cursuri.get(0)));
-	//	profesori.get(0).inregistrareMaterial(new Material("Grafica avansata", 10, cursuri.get(0)));
+		profesori.get(0).inregistrareMaterial(new Material("Introducere in C++", 2, cursuri.get(0)));
+		profesori.get(0).inregistrareMaterial(new Material("Introducere in arhitectura calculatoarelor", 6, cursuri.get(0)));
+		profesori.get(0).inregistrareMaterial(new Material("Introducere in limbaje de asamblare", 7, cursuri.get(0)));
+		profesori.get(0).inregistrareMaterial(new Material("Grafica avansata", 10, cursuri.get(0)));
 		
 		admin.inregistrareStudent(new Student("1234", "Oancea", "Vasile", "vasi@gmail.com", "0736254398", 1), studenti);
 		admin.inregistrareStudent(new Student("1234", "Dobrin", "Matei", "matei@gmail.com", "0736254398", 2), studenti);
@@ -74,7 +74,7 @@ class TestCautareMateriale {
 		List<Material> materiale5 = studenti.get(3).cautaMateriale(cursuri.get(0), LocalDate.of(2025, 5, 14));
 		List<Material> materialeCorecte3 = new ArrayList<Material>();
 		materialeCorecte3.add(cursuri.get(0).getMateriale().get(3));
-		assertTrue(materiale5.equals(materialeCorecte3));	
+		assertTrue(materiale5.equals(materialeCorecte3));
 		
 	}
 
