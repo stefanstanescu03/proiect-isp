@@ -29,10 +29,10 @@ class TestCautareMateriale {
 		admin.inregistrareProfesor(new Profesor("1234", "Popescu", "Ion", "ion@gmail.com", "0736253472"), profesori);
 		admin.inregistrareCurs(new Curs("PCLP", 1), profesori, cursuri);
 		
-		profesori.get(0).inregistrareMaterial(new Material("Introducere in C++", 2, cursuri.get(0)));
-		profesori.get(0).inregistrareMaterial(new Material("Introducere in arhitectura calculatoarelor", 6, cursuri.get(0)));
-		profesori.get(0).inregistrareMaterial(new Material("Introducere in limbaje de asamblare", 7, cursuri.get(0)));
-		profesori.get(0).inregistrareMaterial(new Material("Grafica avansata", 10, cursuri.get(0)));
+		profesori.get(0).inregistrareMaterial(new Material("Introducere in C++", 2, cursuri.get(0), profesori.get(0)));
+		profesori.get(0).inregistrareMaterial(new Material("Introducere in arhitectura calculatoarelor", 6, cursuri.get(0), profesori.get(0)));
+		profesori.get(0).inregistrareMaterial(new Material("Introducere in limbaje de asamblare", 7, cursuri.get(0), profesori.get(0)));
+		profesori.get(0).inregistrareMaterial(new Material("Grafica avansata", 10, cursuri.get(0), profesori.get(0)));
 		
 		admin.inregistrareStudent(new Student("1234", "Oancea", "Vasile", "vasi@gmail.com", "0736254398", 1), studenti);
 		admin.inregistrareStudent(new Student("1234", "Dobrin", "Matei", "matei@gmail.com", "0736254398", 2), studenti);
@@ -68,6 +68,7 @@ class TestCautareMateriale {
 		
 		// Verificare curs terminat nota intre 5 si 8
 		List<Material> materiale4 = studenti.get(2).cautaMateriale(cursuri.get(0), LocalDate.of(2025, 5, 14));		
+		
 		assertTrue(materiale4.equals(materialeCorecte2));
 		
 		// Verificare curs terminat nota intre 8 si 10

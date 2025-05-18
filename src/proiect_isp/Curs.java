@@ -96,6 +96,25 @@ public class Curs {
 		}
 	}
 	
+	public boolean areProfesor(Profesor profesor) {
+		if (this.profesori.indexOf(profesor) != -1) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	
+	public boolean esteIncarcat(Material material) {
+		if (this.materiale.indexOf(material) != -1) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 	
 	
 }

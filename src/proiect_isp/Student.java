@@ -59,7 +59,7 @@ public class Student extends Cont{
 	public void afisareNote() {
 		System.out.println("Notele lui " + this.getNume() + " " + this.getPrenume() + ":" );
 		for (Nota nota : note) {
-			System.out.println(nota.getCurs().getDenumire() + "  " + nota.getValoare());
+			System.out.println(nota.getCurs().getDenumire() + "  " + nota.getValoare() + " " + nota.getData() );
 		}
 		System.out.println("=========================== " );
 	}

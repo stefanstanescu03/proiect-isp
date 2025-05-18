@@ -26,8 +26,14 @@ public class Profesor extends Cont{
 	}
 	
 	public void inregistrareMaterial(Material material) {
-		material.getCurs().adaugareMaterial(material);
-		this.materialeIncarcate.add(material);
+		if( !( material.getCurs().esteIncarcat(material)) ) {
+			material.getCurs().adaugareMaterial(material);
+			this.materialeIncarcate.add(material);
+		}
+		else {
+			System.out.println("Acest material a fost deja incarcat" );
+		}
+
 	}
 	
 	public List<Material> getMaterialeIncarcate() {
@@ -40,7 +46,7 @@ public class Profesor extends Cont{
 
 	public boolean inregistrareNota(Nota nota, Student denotat) {
 		Curs cursdenotat = nota.getCurs();
-
+		
 		if (this.cursuriPredate.indexOf(cursdenotat) == -1 || denotat.getCursuri().indexOf(cursdenotat) == -1) {
 			return false;
 		}
@@ -52,20 +58,39 @@ public class Profesor extends Cont{
 		System.out.println("=========================== " );
 		System.out.println("Profesor" );
 		super.afisare();
-		if(cursuriPredate.size() != 0 ) {
-			System.out.println();
-			System.out.println("Cursuri" );
-			for(Curs curs : cursuriPredate) {
-				System.out.println("Denumire: " + curs.getDenumire() );
-				System.out.println("An: " + curs.getAn() );
-			}
-			System.out.println("=========================== " );	
+	}
+	
+	public void afisareCursuri() {
+		System.out.println("Cursurile lui " + this.getNume() + " " + this.getPrenume() + ":" );
+		for(Curs curs : cursuriPredate) {
+			System.out.println("Denumire: " + curs.getDenumire() );
+			System.out.println("An: " + curs.getAn() );
 		}
-
+		System.out.println("=========================== " );
+	}
+	
+	
+	public void afisareMateriale() {
+		System.out.println("Materialele incarcate de " + this.getNume() + " " + this.getPrenume() + ":" );
+		for(Material material : materialeIncarcate) {
+			System.out.println("Denumire: " + material.getDenumire() );
+			System.out.println("Dificultate: " + material.getDificultate() );
+			System.out.println("Curs: " + material.getCurs().getDenumire() );
+		}
+		System.out.println("=========================== " );
 	}
 	
 	public boolean isTeaching(Curs curs) {
 		if (this.cursuriPredate.indexOf(curs) != -1) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public boolean esteIncarcat(Material material) {
+		if (this.materialeIncarcate.indexOf(material) != -1) {
 			return true;
 		}
 		else {
